@@ -1,0 +1,200 @@
+{
+  "info": {
+    "_postman_id": "9cc15f4a-f63e-4bcb-9258-c742580d5ab0",
+    "name": "Qwerty API",
+    "description": "CRUD API requests for Users, Products, Categories, Suppliers, and Orders.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "id",
+      "value": "1"
+    }
+  ],
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Insert user",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Alex Morgan\",\n  \"email\": \"alex@example.com\",\n  \"password\": \"change-me\",\n  \"phone\": \"555-0100\",\n  \"address\": \"123 Main Street\"\n}"
+            },
+            "url": "{{baseUrl}}/api/users"
+          }
+        },
+        {
+          "name": "Select all users",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/users"
+          }
+        },
+        {
+          "name": "Select user by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/users/{{id}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Insert product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productName\": \"Sample Product\",\n  \"description\": \"Example product description\",\n  \"price\": 19.99,\n  \"quantity\": 10,\n  \"expirationDate\": \"2027-12-31\",\n  \"categoryId\": 1,\n  \"supplierId\": 1\n}"
+            },
+            "url": "{{baseUrl}}/api/products"
+          }
+        },
+        {
+          "name": "Select all products",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/products"
+          }
+        },
+        {
+          "name": "Select product by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/products/{{id}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Insert category",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"General\",\n  \"description\": \"General category\",\n  \"code\": \"GEN\",\n  \"isActive\": true,\n  \"sortOrder\": 1\n}"
+            },
+            "url": "{{baseUrl}}/api/categories"
+          }
+        },
+        {
+          "name": "Select all categories",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/categories"
+          }
+        },
+        {
+          "name": "Select category by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/categories/{{id}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Suppliers",
+      "item": [
+        {
+          "name": "Insert supplier",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Example Supplies\",\n  \"contactName\": \"Jamie Lee\",\n  \"email\": \"supplier@example.com\",\n  \"phone\": \"555-0123\",\n  \"address\": \"456 Market Street\"\n}"
+            },
+            "url": "{{baseUrl}}/api/suppliers"
+          }
+        },
+        {
+          "name": "Select all suppliers",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/suppliers"
+          }
+        },
+        {
+          "name": "Select supplier by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/suppliers/{{id}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Insert order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderNumber\": \"ORD-1001\",\n  \"userId\": 1,\n  \"productId\": 1,\n  \"quantity\": 2,\n  \"unitPrice\": 19.99,\n  \"status\": \"pending\",\n  \"orderDate\": \"2026-10-03T12:00:00.000Z\"\n}"
+            },
+            "url": "{{baseUrl}}/api/orders"
+          }
+        },
+        {
+          "name": "Select all orders",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/orders"
+          }
+        },
+        {
+          "name": "Select order by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/orders/{{id}}"
+          }
+        }
+      ]
+    }
+  ]
+}
